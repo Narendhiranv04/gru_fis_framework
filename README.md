@@ -1,6 +1,6 @@
-# 🚀 FIS-GRU Inference Project Setup Guide
+# FIS-GRU Inference Setup Guide
 
-This guide covers setting up, running, and deploying the Fuzzy Inference System (FIS) integrated with a GRU-based ONNX model using ONNX Runtime on your Raspberry Pi.
+This covers up setting up, running, and deploying the Fuzzy Inference System (FIS) integrated with a GRU-based ONNX model using ONNX Runtime on your Raspberry Pi.
 
 ---
 
