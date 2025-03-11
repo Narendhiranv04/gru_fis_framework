@@ -65,8 +65,11 @@ Make sure paths to ONNX Runtime are correctly specified.
 ```bash
 ./bin/fis_gru_exe ./all_data ./model_gru.onnx
 ```
+![Screenshot from 2025-03-12 07-14-12](https://github.com/user-attachments/assets/b38d1118-82fe-4b6f-9460-59296195ae25)
 
 You should see outputs for predictions, ground truth values, and RMSE.
+
+
 
 ---
 
