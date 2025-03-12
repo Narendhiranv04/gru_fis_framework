@@ -1,7 +1,7 @@
 # Compiler & Flags
 CC = gcc
-CFLAGS = -Wall -Wextra -O2 -Wno-implicit-function-declaration -Iinclude
-LDFLAGS = -lm  # Link with math library
+CFLAGS = -Wall -Wextra -O2 -Wno-implicit-function-declaration -DORT_API_VERSION=21 -Iinclude -I/home/naren/Downloads/onnxruntime-linux-x64-1.21.0/include
+LDFLAGS = -lm -L/home/naren/Downloads/onnxruntime-linux-x64-1.21.0/lib -lonnxruntime
 
 # Source Files (FIS + GRU)
 SRC = src/main.c src/stwFIS.c src/stwFIS_initialize.c src/stwFIS_terminate.c \
