@@ -16,8 +16,8 @@ as well as Python scripts for data preparation and model conversion.
 ## 1. Clone the repo
 
 ```bash
-git clone https://github.com/<your-username>/<your-repo>.git
-cd <your-repo>
+git clone https://github.com/Narendhiranv04/gru_fis_framework.git
+cd gru_fis_framework
 ````
 
 ---
