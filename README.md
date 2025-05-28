@@ -16,8 +16,8 @@ as well as Python scripts for data preparation and model conversion.
 ## 1. Clone the repo
 
 ```bash
-git clone https://github.com/Narendhiranv04/gru_fis_framework.git
-cd gru_fis_framework
+git clone https://github.com/Movement-ARCH/STW-Control-Architecture.git
+cd gru_fis_framework/FIS_GRU_Project_Simple_Perfect
 ````
 
 ---
