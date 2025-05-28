@@ -1,0 +1,4 @@
+,,,,,,,,,,,,
+,PYTHON,,,,,,,,COMPILED,,,
+,RMSE (HIP),RMSE (KNEE),LATENCY (for .h5),FPS (for .h5),LATENCY (for .onnx),FPS (for .onnx),,,RMSE (HIP),RMSE (KNEE),LATENCY (per batch),FPS
+,0.0564,0.0602,48.59 ± 2.19 ms,20.6 FPS,1.43 ± 0.16 ms,698.6 FPS,,,0.061199090225564,0.059207360902256,1.26 ± 0.42 ms,795.2 FPS
