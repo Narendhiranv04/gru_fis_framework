@@ -1,79 +1,96 @@
-# FIS-GRU Inference Setup Guide
+# FIS + GRU Project
 
-This covers up setting up, running, and deploying the Fuzzy Inference System (FIS) integrated with a GRU-based ONNX model using ONNX Runtime on your Raspberry Pi.
+This repository contains a combined Fuzzy Inference System (FIS) + Gated Recurrent Unit (GRU) demo in C,  
+as well as Python scripts for data preparation and model conversion.
 
 ---
 
-## 📌 **Step-by-Step Setup**
+## Prerequisites
 
-### 1. 📂 **Clone Repository**
+- **Git**  
+- **C toolchain** (e.g. `gcc`, `make`)  
+- **Python 3.7+**  
 
-```bash
-git clone https://github.com/Narendhiranv04/gru_fis_framework
-cd FIS_GRU_Project
-```
+---
 
-## 🔧 Environment Setup
-
-### Step 1: **Install Python and Virtual Environment**
+## 1. Clone the repo
 
 ```bash
-sudo apt update
-sudo apt install python3 python3-pip python3-venv
-```
+git clone https://github.com/<your-username>/<your-repo>.git
+cd <your-repo>
+````
 
-### Step 2: **Create and Activate Virtual Environment**
+---
 
-```bash
-python3 -m venv tflite_env
-source tflite_env/bin/activate
-```
-
-### Step 3: **Install Python Dependencies**
+## 2. Create & activate a Python virtual environment
 
 ```bash
-pip install numpy pandas sklearn scipy onnxruntime
+python3 -m venv .venv
+source .venv/bin/activate
 ```
 
 ---
 
-
-## 🛠️ Compilation and Execution
-
-### Step 1: **Install ONNX Runtime for C**
-
-Download and extract ONNX Runtime for ARM (for Raspberry Pi):
+## 3. Install Python dependencies
 
 ```bash
-wget onnxruntime-linux-x64-1.21.0.tgz
-tar -xzvf /home/naren/Downloads/onnxruntime-linux-x64-1.21.0.tgz
+pip install --upgrade pip
+pip install \
+  numpy \
+  pandas \
+  scikit-learn \
+  scipy \
+  h5py \
+  onnxruntime
 ```
-
-Set up paths for `include` and `lib`.
-
-### Step 2: **Compile the Project**
-
-```bash
-make clean
-make 
-```
-
-Make sure paths to ONNX Runtime are correctly specified.
-
-### Step 2: **Run the Executable**
-
-```bash
-./bin/fis_gru_exe ./all_data ./model_gru.onnx
-```
-![Screenshot from 2025-03-12 07-14-12](https://github.com/user-attachments/assets/b38d1118-82fe-4b6f-9460-59296195ae25)
-
-You should see outputs for predictions, ground truth values, and RMSE.
-
-
 
 ---
 
-## 🖥️ Deploying on Raspberry Pi
 
-Yet - to - be - done
+
+You should now have:
+
+```
+├── include/
+├── src/
+├── onnxruntime-linux-x64-1.21.0/
+│   ├── include/
+│   └── lib/
+└── Makefile
+```
+
+
+## 4. Build the C executable
+
+```bash
+make clean all
+```
+
+* Compiles sources in `src/` → `build/*.o`
+* Links against ONNX Runtime → `bin/fis_gru_exe`
+* Embeds an rpath so you don’t need to set `LD_LIBRARY_PATH`
+
+---
+
+## 6. Run the demo
+
+```bash
+./bin/fis_gru_exe /test_data_unshuffled.csv /model_gru.onnx
+
+```
+
+---
+
+## 7. Deactivate the Python virtual environment
+
+```bash
+deactivate
+```
+
+## Output
+![image](https://github.com/user-attachments/assets/5829c4cf-3db4-4d55-b035-1bbd175af128)
+
+CSV file containing the FIS offset value along with hip and knee torques is also saved accordingly.
+
+
 
